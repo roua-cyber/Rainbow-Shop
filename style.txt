@@ -1,0 +1,6 @@
+rose  rgb(219,197,190)
+rose bebe rgb(219,197,190)
+beige 
+marron rgb(88,89,91)
+gris rgb(88,89,91)
+font-family:cursive;
