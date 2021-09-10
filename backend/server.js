@@ -23,10 +23,18 @@ app.use("/post", require("./routes/post"));
 app.use("/upl", require("./routes/upload"));
 
 //setup for deployment
-app.use(express.static(path.join(__dirname, "../", "frontend", "build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../", "frontend", "build", "index.html"));
-});
+if (process.env.NODE_ENV == production) {
+  app.use(express.static(path.join(__dirname, "../", "frontend", "build")));
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.join(__dirname, "../", "frontend", "build", "index.html")
+    );
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("developement phase");
+  });
+}
 
 //multer
 // const fileStorageEngine = multer.diskStorage({
@@ -45,5 +53,4 @@ app.get("*", (req, res) => {
 //     res.send("Single FIle upload success");
 //   });
 
-const PORT = 5000;
-app.listen(PORT, () => console.log("server running"));
+app.listen(process.env.PORT, () => console.log("server running"));
