@@ -23,7 +23,7 @@ app.use("/post", require("./routes/post"));
 app.use("/upl", require("./routes/upload"));
 
 //setup for deployment
-if (process.env.NODE_ENV == production) {
+if (process.env.NODE_ENV == "production") {
   app.use(express.static(path.join(__dirname, "../", "frontend", "build")));
   app.get("*", (req, res) => {
     res.sendFile(
