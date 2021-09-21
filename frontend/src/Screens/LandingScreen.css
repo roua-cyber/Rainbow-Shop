@@ -56,7 +56,6 @@
   }
   .carousel-caption h3 {
     font-size: 2em;
-
   }
 }
 
@@ -66,7 +65,7 @@
   }
 
   .carousel {
-    width: 500px;
+    width: 400px;
     margin: auto;
   }
 }
