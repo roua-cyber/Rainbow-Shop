@@ -66,10 +66,11 @@ const CartScreen = () => {
             <p>${getCartSubTotal()}</p>
           </div>
           <div>
-            <button>
+            {" "}
+            <Link to="/feed" style={{ textDecoration: "none" }}>
               {" "}
-              <Link to="/feed">confirm</Link>
-            </button>
+              <button>confirm </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -16,8 +16,8 @@ const importData = async () => {
   try {
     await Product.deleteMany({});
     await Product.insertMany(products);
-    // await User.deleteMany({});
-    // await User.insertMany(users);
+    await User.deleteMany({});
+    await User.insertMany(users);
     // await Ideas.deleteMany({});
     // await Ideas.insertMany(ideas);
     // await Cake.deleteMany({});

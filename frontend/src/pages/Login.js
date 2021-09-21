@@ -34,20 +34,29 @@ const Login = ({ history }) => {
         </div>
         {auth.error ? (
           <div className="err">
-            {auth.error[0].msg} {console.log(auth.error[0])}
+            {auth.error.filter((el) => el.msg === "register before")[0]?.msg}
           </div>
         ) : (
-          <div></div>
+          console.log(auth.error)
         )}
         <div className="form-group">
           <label>Password</label>
           <input type="text" name="password" onChange={handleChange}></input>
+          {auth.error ? (
+            <div className="err">
+              {
+                auth.error.filter(
+                  (el) =>
+                    el.msg === "enter your password" ||
+                    el.msg === "wrong password"
+                )[0]?.msg
+              }
+            </div>
+          ) : (
+            console.log(auth.error)
+          )}
         </div>
-        {auth.error && auth.error.length > 1 ? (
-          <div className="err">{auth.error[1].msg}</div>
-        ) : (
-          <div></div>
-        )}
+
         <button
           type="submit"
           className="btnn"

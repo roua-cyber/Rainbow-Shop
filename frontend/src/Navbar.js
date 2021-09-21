@@ -24,7 +24,11 @@ const Navbar = () => {
         </>
       ) : (
         <div className="mar">
-          <Link className="login_but" to="/login">
+          <Link
+            className="login_but"
+            to="/login"
+            style={{ textDecoration: "none" }}
+          >
             {" "}
             <button
               className="login_butt_but"
@@ -35,7 +39,11 @@ const Navbar = () => {
             </button>{" "}
           </Link>
           <span className="login_but"> |</span>
-          <Link className="login_but" to="/register">
+          <Link
+            className="login_but"
+            to="/register"
+            style={{ textDecoration: "none" }}
+          >
             {" "}
             <button
               className="login_butt_but"

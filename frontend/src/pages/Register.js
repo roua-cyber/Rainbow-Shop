@@ -41,48 +41,58 @@ const Register = ({ history }) => {
           <label>Firstname</label>
           <input type="text" name="firstname" onChange={handleChange}></input>
           {auth.error ? (
-            <div className="err">{auth.error[0].msg}</div>
+            <div className="err">
+              {auth.error.filter((el) => el.param === "firstname")[0]?.msg}
+            </div>
           ) : (
-            <div></div>
+            console.log(auth.error)
           )}
         </div>
         <div className="form-group">
           <label>Lastname</label>
           <input type="text" name="lastname" onChange={handleChange}></input>
           {auth.error ? (
-            <div className="err">{auth.error[0].msg}</div>
+            <div className="err">
+              {auth.error.filter((el) => el.param === "lastname")[0]?.msg}
+            </div>
           ) : (
-            <div></div>
+            console.log(auth.error)
           )}
         </div>
         <div className="form-group">
           <label>Phone</label>
           <input type="text" name="phone" onChange={handleChange}></input>
-          {auth.error && auth.error.length > 1 ? (
-            <div className="err">{auth.error[2].msg}</div>
+          {auth.error ? (
+            <div className="err">
+              {auth.error.filter((el) => el.param === "phone")[0]?.msg}
+            </div>
           ) : (
-            <div></div>
+            console.log(auth.error)
           )}
         </div>
         <div className="form-group">
           <label>Email</label>
           <input type="text" name="email" onChange={handleChange}></input>
           {auth.error ? (
-            <div className="err">{auth.error[2].msg}</div>
+            <div className="err">
+              {auth.error.filter((el) => el.param === "email")[0]?.msg}
+            </div>
           ) : (
-            <div></div>
+            console.log(auth.error)
           )}
         </div>
         <div className="form-group">
           <label>Password</label>
           <input type="text" name="password" onChange={handleChange}></input>
-          {/* {auth.error ? (
-            <div className="err">{auth.error[4].msg}</div>
+          {auth.error ? (
+            <div className="err">
+              {auth.error.filter((el) => el.param === "password")[0]?.msg}
+            </div>
           ) : (
-            <div></div>
-          )} */}
+            console.log(auth.error)
+          )}
         </div>
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Upload Image</label>
           <input
             type="file"
@@ -99,7 +109,7 @@ const Register = ({ history }) => {
         >
           {" "}
           upload
-        </button>
+        </button> */}
         <button
           type="submit"
           className="btnn"

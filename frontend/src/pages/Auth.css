@@ -58,9 +58,8 @@ body {
 
 .err {
   width: 100%;
-  display: inline-block;
-  padding: 5px;
-  color: red;
+  display: inline;
+  color: orange;
   text-align: center;
   padding-top: 0px;
   margin: 0.5rem 0;
